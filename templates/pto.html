@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سماعة بلوتوث لاسلكية - منتج متميز</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        .floating-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+            50% { transform: translateY(-20px) rotate(180deg); opacity: 0.8; }
+        }
+
+        .product-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            max-width: 1000px;
+            width: 90%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 600px;
+            position: relative;
+            z-index: 10;
+            transition: transform 0.3s ease;
+        }
+
+        .product-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .image-section {
+            background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .product-image {
+            width: 280px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .product-image:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .details-section {
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .product-badge {
+            background: linear-gradient(45deg, #ff6b6b, #ffa500);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            align-self: flex-start;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .product-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .product-description {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .features-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .features-list li i {
+            color: #4CAF50;
+            margin-left: 12px;
+            font-size: 1.1rem;
+        }
+
+        .price-section {
+            margin-bottom: 30px;
+        }
+
+        .product-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .price-currency {
+            color: #ff6b6b;
+        }
+
+        .original-price {
+            font-size: 1.2rem;
+            color: #999;
+            text-decoration: line-through;
+            margin-right: 10px;
+        }
+
+        .discount-badge {
+            background: #ff6b6b;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .order-button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .order-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .order-button:hover:before {
+            left: 100%;
+        }
+
+        .order-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+        }
+
+        .order-button:active {
+            transform: translateY(-1px);
+        }
+
+        .social-proof {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .stars {
+            color: #ffa500;
+            margin-left: 8px;
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: rgba(76, 175, 80, 0.1);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #4CAF50;
+        }
+
+        @media (max-width: 768px) {
+            .product-container {
+                grid-template-columns: 1fr;
+                max-width: 95%;
+                margin: 20px 0;
+            }
+            
+            .details-section {
+                padding: 30px 25px;
+            }
+            
+            .product-title {
+                font-size: 2rem;
+            }
+            
+            .product-image {
+                width: 220px;
+                height: 220px;
+            }
+            
+            .trust-badges {
+                flex-wrap: wrap;
+            }
+        }
+
+        .quantity-section {
+            margin-bottom: 25px;
+        }
+
+        .quantity-label {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 8px;
+        }
+
+        .quantity-btn {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quantity-btn:hover {
+            background: #667eea;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .hours-input {
+            width: 80px;
+            height: 45px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+            transition: border-color 0.3s ease;
+        }
+
+        .hours-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .hours-note {
+            font-size: 0.85rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .price-per-hour {
+            font-size: 0.9rem;
+            color: #999;
+            margin-right: 10px;
+        }
+
+        .glow-effect {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: glow 4s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-particles"></div>
+    
+    <div class="product-container">
+        <div class="glow-effect"></div>
+        
+        <div class="image-section">
+            <img src="https://i.pinimg.com/736x/93/b5/77/93b5776860e7fd5205389fddd8bc810a.jpg" 
+                 alt="Wireless Bluetooth Headphones" 
+                 class="product-image">
+        </div>
+        
+        <div class="details-section">
+            <div class="product-badge">Exclusive Product</div>
+            
+            <h1 class="product-title">Wireless Bluetooth Headphones</h1>
+            
+            <p class="product-description">
+                High-quality wireless headphones with advanced noise cancellation technology. 
+                Long-lasting battery up to 50 hours, sleek lightweight design provides exceptional comfort all day long.
+            </p>
+            
+            <ul class="features-list">
+                <li><i class="fas fa-check-circle"></i> Active Noise Cancellation</li>
+                <li><i class="fas fa-check-circle"></i> 50 Hours Battery Life</li>
+                <li><i class="fas fa-check-circle"></i> Hi-Fi High Definition Sound</li>
+                <li><i class="fas fa-check-circle"></i> IPX7 Water Resistant</li>
+                <li><i class="fas fa-check-circle"></i> Fast Charging - 15 min = 3 hours</li>
+            </ul>
+            
+            <div class="quantity-section">
+                <label for="hours-select" class="quantity-label">Hours Needed:</label>
+                <div class="quantity-controls">
+                    <button type="button" class="quantity-btn" onclick="decreaseHours()">-</button>
+                    <input type="number" id="hours-input" value="1" min="1" max="24" class="hours-input">
+                    <button type="button" class="quantity-btn" onclick="increaseHours()">+</button>
+                </div>
+                <p class="hours-note">Minimum: 1 hour | Maximum: 24 hours</p>
+            </div>
+            
+            <div class="price-section">
+                <div>
+                    <span class="original-price">699 جنيه</span>
+                    <span class="discount-badge">29% OFF</span>
+                </div>
+                <div class="product-price">
+                    <span class="price-currency" id="total-price">499</span> جنيه
+                    <span class="price-per-hour">(499 جنيه/ساعة)</span>
+                </div>
+            </div>
+            
+            <button class="order-button">
+                <i class="fas fa-shopping-cart"></i> اطلب الآن
+            </button>
+            
+            <div class="social-proof">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <span>Rating 4.9/5 from 2,847 customers</span>
+            </div>
+            
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>2 Year Warranty</span>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-truck"></i>
+                    <span>Free Shipping</span>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-undo"></i>
+                    <span>Free Returns</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.querySelector('.floating-particles');
+            
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Add click animation to order button
+        document.querySelector('.order-button').addEventListener('click', function(e) {
+            const button = e.target;
+            const ripple = document.createElement('span');
+            const rect = button.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            ripple.style.position = 'absolute';
+            ripple.style.borderRadius = '50%';
+            ripple.style.background = 'rgba(255, 255, 255, 0.5)';
+            ripple.style.transform = 'scale(0)';
+            ripple.style.animation = 'ripple 0.6s linear';
+            ripple.style.pointerEvents = 'none';
+            
+            button.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+
+        // Add CSS for ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Hours selection functionality
+        function increaseHours() {
+            const input = document.getElementById('hours-input');
+            const currentValue = parseInt(input.value);
+            if (currentValue < 24) {
+                input.value = currentValue + 1;
+                updatePrice();
+            }
+        }
+
+        function decreaseHours() {
+            const input = document.getElementById('hours-input');
+            const currentValue = parseInt(input.value);
+            if (currentValue > 1) {
+                input.value = currentValue - 1;
+                updatePrice();
+            }
+        }
+
+        function updatePrice() {
+            const hours = parseInt(document.getElementById('hours-input').value);
+            const pricePerHour = 499;
+            const totalPrice = hours * pricePerHour;
+            document.getElementById('total-price').textContent = totalPrice.toLocaleString();
+        }
+
+        // Add event listener for manual input
+        document.getElementById('hours-input').addEventListener('input', function() {
+            let value = parseInt(this.value);
+            if (value < 1) this.value = 1;
+            if (value > 24) this.value = 24;
+            updatePrice();
+        });
+
+        // Initialize particles
+        createParticles();
+
+        // Add parallax effect to image
+        document.addEventListener('mousemove', (e) => {
+            const image = document.querySelector('.product-image');
+            const container = document.querySelector('.product-container');
+            const rect = container.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width;
+            const y = (e.clientY - rect.top) / rect.height;
+            
+            const moveX = (x - 0.5) * 10;
+            const moveY = (y - 0.5) * 10;
+            
+            image.style.transform = `scale(1.05) translate(${moveX}px, ${moveY}px)`;
+        });
+
+        document.querySelector('.product-container').addEventListener('mouseleave', () => {
+            const image = document.querySelector('.product-image');
+            image.style.transform = 'scale(1.05) translate(0px, 0px)';
+        });
+    </script>
+</body>
+</html>
